@@ -17,7 +17,7 @@ export function AddToCartButton({
   return (
     <CartForm route="/cart" inputs={{lines}} action={CartForm.ACTIONS.LinesAdd}>
       {(fetcher: FetcherWithComponents<any>) => (
-        <>
+        <div className="AddToCartButton">
           <input
             name="analytics"
             type="hidden"
@@ -30,7 +30,7 @@ export function AddToCartButton({
           >
             {children}
           </button>
-        </>
+        </div>
       )}
     </CartForm>
   );
