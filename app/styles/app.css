@@ -392,9 +392,6 @@ button.reset:hover:not(:has(> *)) {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
-  @media (min-width: 45em) {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .recommended-product img {
@@ -409,7 +406,7 @@ button.reset:hover:not(:has(> *)) {
 .collections-grid {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
+  grid-template-columns: repeat(2, 1fr);
   margin-bottom: 2rem;
 }
 
@@ -445,7 +442,7 @@ button.reset:hover:not(:has(> *)) {
 .products-grid {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
+  grid-template-columns: repeat(2, 1fr);
   margin-bottom: 2rem;
 }
 
@@ -473,17 +470,16 @@ button.reset:hover:not(:has(> *)) {
 .product-item h4,
 .product-item small {
   margin-top: 0;
-  margin-bottom: 0;
-}
-
-.product-item h4:first-of-type {
+    margin-bottom: 0;
+  }
+  
+  .product-item h4:first-of-type {
   margin-top: auto;
 }
 
 .product-item small {
   margin-top: 0.5rem;
 }
-
 /*
 * --------------------------------------------------
 * routes/products.$handle.tsx
@@ -553,7 +549,7 @@ button.reset:hover:not(:has(> *)) {
 .blog-grid {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
+  grid-template-columns: repeat(2, 1fr);
   margin-bottom: 2rem;
 }
 
