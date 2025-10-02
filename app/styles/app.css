@@ -389,9 +389,28 @@ button.reset:hover:not(:has(> *)) {
 }
 
 .recommended-products-grid {
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+}
+
+.recommended-products-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.recommended-products-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.recommended-products-grid::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.recommended-products-grid::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .recommended-product img {
@@ -453,7 +472,9 @@ button.reset:hover:not(:has(> *)) {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  min-height: 300px;
+  width: 280px;
+  flex-shrink: 0;
+  height: auto;
 }
 
 .product-item:hover {
@@ -470,15 +491,20 @@ button.reset:hover:not(:has(> *)) {
 .product-item h4,
 .product-item small {
   margin-top: 0;
-    margin-bottom: 0;
-  }
-  
-  .product-item h4:first-of-type {
+  margin-bottom: 0;
+}
+
+.product-item h4:first-of-type {
   margin-top: auto;
 }
 
 .product-item small {
   margin-top: 0.5rem;
+}
+
+/* Carousel specific styling for recommended products */
+.recommended-products-grid .product-item {
+  margin-bottom: 0;
 }
 /*
 * --------------------------------------------------
