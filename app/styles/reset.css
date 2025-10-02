@@ -53,18 +53,19 @@ p {
 }
 
 a {
-  color: #000;
+  color: var(--color-dark, #2d5016);
   text-decoration: none;
 }
 
 a:hover {
+  color: var(--color-accent, #228b22);
   text-decoration: underline;
   cursor: pointer;
 }
 
 hr {
   border-bottom: none;
-  border-top: 1px solid #000;
+  border-top: 1px solid var(--color-dark, #2d5016);
   margin: 0;
 }
 
@@ -105,11 +106,12 @@ form {
 
 input {
   border-radius: 4px;
-  border: 1px solid #000;
+  border: 1px solid var(--color-dark, #2d5016);
   font-size: 1rem;
   margin-bottom: 0.5rem;
   margin-top: 0.25rem;
   padding: 0.5rem;
+  background: var(--color-light, #f0f8e8);
 }
 
 legend {
