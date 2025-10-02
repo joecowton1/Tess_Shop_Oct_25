@@ -456,7 +456,6 @@ button.reset:hover:not(:has(> *)) {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   min-height: 300px;
 }
 
@@ -468,6 +467,12 @@ button.reset:hover:not(:has(> *)) {
 .product-item img {
   height: auto;
   width: 100%;
+  flex-shrink: 0;
+}
+
+.product-item h4,
+.product-item small {
+  margin-top: auto;
 }
 
 /*
