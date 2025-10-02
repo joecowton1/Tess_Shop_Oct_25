@@ -30,7 +30,6 @@ export function CartLineItem({
       {image && (
         <Image
           alt={title}
-          aspectRatio="1/1"
           data={image}
           height={100}
           loading="lazy"

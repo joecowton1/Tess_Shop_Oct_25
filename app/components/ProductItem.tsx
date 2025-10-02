@@ -29,7 +29,6 @@ export function ProductItem({
       {image && (
         <Image
           alt={image.altText || product.title}
-          aspectRatio="1/1"
           data={image}
           loading={loading}
           sizes="(min-width: 45em) 400px, 100vw"

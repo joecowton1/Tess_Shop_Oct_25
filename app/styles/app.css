@@ -385,7 +385,7 @@ button.reset:hover:not(:has(> *)) {
 .featured-collection img {
   height: auto;
   width: 100%;
-  object-fit: contain;
+    object-fit: contain;
 }
 
 .recommended-products-grid {
@@ -545,8 +545,8 @@ button.reset:hover:not(:has(> *)) {
 
 .blog-article-image img {
   height: auto;
-  width: 100%;
-  object-fit: contain;
+    width: 100%;
+      object-fit: contain;
 }
 
 /*
