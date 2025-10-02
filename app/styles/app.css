@@ -379,16 +379,13 @@ button.reset:hover:not(:has(> *)) {
 }
 
 .featured-collection-image {
-  aspect-ratio: 1 / 1;
-  @media (min-width: 45em) {
-    aspect-ratio: 16 / 9;
-  }
+  display: block;
 }
 
 .featured-collection img {
   height: auto;
-  max-height: 100%;
-  object-fit: cover;
+  width: 100%;
+  object-fit: contain;
 }
 
 .recommended-products-grid {
@@ -543,12 +540,13 @@ button.reset:hover:not(:has(> *)) {
 }
 
 .blog-article-image {
-  aspect-ratio: 3/2;
   display: block;
 }
 
 .blog-article-image img {
-  height: 100%;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
 }
 
 /*
