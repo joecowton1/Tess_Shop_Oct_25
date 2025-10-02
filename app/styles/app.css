@@ -21,20 +21,20 @@ body {
 main {
   background: #ffffff;
   margin: 1rem 3rem;
-  padding: 2rem 6rem;
+  padding: 2rem 12rem;
 }
 
 @media (min-width: 768px) {
   main {
     margin: 2rem 4rem;
-    padding: 2rem 6rem;
+    padding: 2rem 12rem;
   }
 }
 
 @media (min-width: 1024px) {
   main {
     margin: 2rem 6rem;
-    padding: 2rem 6rem;
+    padding: 2rem 12rem;
   }
 }
 
