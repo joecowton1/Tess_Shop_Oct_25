@@ -35,12 +35,12 @@ main {
   main {
     margin: 2rem 6rem;
     padding: 2rem 8rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  main {
-    margin: 2rem 6rem;
+    }
+    }
+    
+    @media (min-width: 1440px) {
+      main {
+        margin: 2rem 6rem;
     padding: 2rem 12rem;
   }
 }
@@ -475,20 +475,20 @@ button.reset:hover:not(:has(> *)) {
 .products-grid {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   margin-bottom: 2rem;
   width: 100%;
 }
 
 @media (min-width: 768px) {
   .products-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
   .products-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
