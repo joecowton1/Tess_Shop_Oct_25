@@ -87,7 +87,7 @@ export default function FirstCollection() {
       )}
       <PaginatedResourceSection<ProductItemFragment>
         connection={collection.products}
-        resourcesClassName="recommended-products-grid"
+        resourcesClassName="products-grid"
       >
         {({node: product, index}) => (
           <ProductItem
