@@ -230,7 +230,6 @@ button.reset:hover:not(:has(> *)) {
     padding: 0 12rem;
   }
 }
-
 .header-menu-mobile-toggle {
   @media (min-width: 48em) {
     display: none;
@@ -546,6 +545,7 @@ button.reset:hover:not(:has(> *)) {
 
 .product-item h4:first-of-type {
   margin-top: auto;
+  padding-top: 1rem;
 }
 
 .product-item small {
