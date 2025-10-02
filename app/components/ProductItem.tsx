@@ -26,10 +26,6 @@ export function ProductItem({
       prefetch="intent"
       to={variantUrl}
     >
-      <h4>{product.title}</h4>
-      <small>
-        <Money data={product.priceRange.minVariantPrice} />
-      </small>
       {image && (
         <Image
           alt={image.altText || product.title}
@@ -38,6 +34,10 @@ export function ProductItem({
           sizes="(min-width: 45em) 400px, 100vw"
         />
       )}
+      <h4>{product.title}</h4>
+      <small>
+        <Money data={product.priceRange.minVariantPrice} />
+      </small>
     </Link>
   );
 }
