@@ -1,8 +1,9 @@
 import {useLoaderData, Link} from 'react-router';
 import type {Route} from './+types/_index';
 import {getPaginationVariables, Image} from '@shopify/hydrogen';
-import type {CollectionFragment} from 'storefrontapi.generated';
+import type {CollectionFragment, ProductItemFragment} from 'storefrontapi.generated';
 import {PaginatedResourceSection} from '~/components/PaginatedResourceSection';
+import {ProductItem} from '~/components/ProductItem';
 
 export const meta: Route.MetaFunction = () => {
   return [{title: 'Hydrogen | Collections'}];
@@ -24,17 +25,36 @@ export async function loader(args: Route.LoaderArgs) {
  */
 async function loadCriticalData({context, request}: Route.LoaderArgs) {
   const paginationVariables = getPaginationVariables(request, {
-    pageBy: 4,
+    pageBy: 12,
   });
 
   const [{collections}] = await Promise.all([
     context.storefront.query(COLLECTIONS_QUERY, {
-      variables: paginationVariables,
+      variables: {
+        first: 1, // Get just the first collection
+      },
     }),
     // Add other queries here, so that they are loaded in parallel
   ]);
 
-  return {collections};
+  // Get the first collection
+  const firstCollection = collections.nodes[0];
+  
+  if (!firstCollection) {
+    return {collection: null};
+  }
+
+  // Fetch products for the first collection
+  const [{collection}] = await Promise.all([
+    context.storefront.query(FIRST_COLLECTION_PRODUCTS_QUERY, {
+      variables: {
+        handle: firstCollection.handle,
+        ...paginationVariables,
+      },
+    }),
+  ]);
+
+  return {collection};
 }
 
 /**
@@ -46,21 +66,34 @@ function loadDeferredData({context}: Route.LoaderArgs) {
   return {};
 }
 
-export default function Collections() {
-  const {collections} = useLoaderData<typeof loader>();
+export default function FirstCollection() {
+  const {collection} = useLoaderData<typeof loader>();
+
+  if (!collection) {
+    return (
+      <div className="collections">
+        <h1>No collections found</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="collections">
-      <h1>Collections</h1>
-      <PaginatedResourceSection<CollectionFragment>
-        connection={collections}
-        resourcesClassName="collections-grid"
+      <h1>{collection.title}</h1>
+      {collection.description && (
+        <div className="collection-description">
+          <p>{collection.description}</p>
+        </div>
+      )}
+      <PaginatedResourceSection<ProductItemFragment>
+        connection={collection.products}
+        resourcesClassName="recommended-products-grid"
       >
-        {({node: collection, index}) => (
-          <CollectionItem
-            key={collection.id}
-            collection={collection}
-            index={index}
+        {({node: product, index}) => (
+          <ProductItem
+            key={product.id}
+            product={product}
+            loading={index < 3 ? 'eager' : undefined}
           />
         )}
       </PaginatedResourceSection>
@@ -130,6 +163,59 @@ const COLLECTIONS_QUERY = `#graphql
         hasPreviousPage
         startCursor
         endCursor
+      }
+    }
+  }
+` as const;
+
+const FIRST_COLLECTION_PRODUCTS_QUERY = `#graphql
+  fragment ProductItem on Product {
+    id
+    title
+    handle
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
+    featuredImage {
+      id
+      url
+      altText
+      width
+      height
+    }
+  }
+  query FirstCollectionProducts(
+    $handle: String!
+    $country: CountryCode
+    $endCursor: String
+    $first: Int
+    $language: LanguageCode
+    $last: Int
+    $startCursor: String
+  ) @inContext(country: $country, language: $language) {
+    collection(handle: $handle) {
+      id
+      title
+      description
+      handle
+      products(
+        first: $first,
+        last: $last,
+        before: $startCursor,
+        after: $endCursor
+      ) {
+        nodes {
+          ...ProductItem
+        }
+        pageInfo {
+          hasNextPage
+          hasPreviousPage
+          startCursor
+          endCursor
+        }
       }
     }
   }
