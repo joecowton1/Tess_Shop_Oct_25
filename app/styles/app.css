@@ -7,7 +7,7 @@
   --color-dark: #2d5016;
   --color-light: #f0f8e8;
   --color-primary: #000000;
-    --color-secondary: #3774b5;
+    --color-secondary: #228b22;
   --color-accent: #228b22;
 }
 
@@ -38,6 +38,42 @@ main {
 @media (min-width: 1440px) {
   main {
     padding: 4rem 12rem;
+  }
+}
+
+/* Specific styling for main page content */
+.main-page-content {
+  background: #ffffff;
+  padding: 1rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .main-page-content {
+    padding: 2rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-page-content {
+    padding: 2rem 12rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main-page-content {
+    padding: 4rem 12rem;
+  }
+}
+
+/* Specific styling for cart popout content */
+.cart-main {
+  background: #ffffff;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cart-main {
+    padding: 1.5rem;
   }
 }
 

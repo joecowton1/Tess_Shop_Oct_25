@@ -79,7 +79,6 @@ export default function FirstCollection() {
 
   return (
     <div className="collections">
-      <h1>{collection.title}</h1>
       {collection.description && (
         <div className="collection-description">
           <p>{collection.description}</p>
