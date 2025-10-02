@@ -6,8 +6,8 @@
   --header-height: 64px;
   --color-dark: #2d5016;
   --color-light: #f0f8e8;
-  --color-primary: #4a7c59;
-  --color-secondary: #6b8e23;
+  --color-primary: #000000;
+    --color-secondary: #3774b5;
   --color-accent: #228b22;
 }
 
@@ -51,7 +51,7 @@ img {
 * --------------------------------------------------
 */
 .link:hover {
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -553,6 +553,22 @@ button.reset:hover:not(:has(> *)) {
   margin-top: 0.5rem;
 }
 
+/* Remove underlines from product item links */
+.product-item a {
+  text-decoration: none;
+}
+
+.product-item a:hover {
+  text-decoration: none;
+}
+
+.product-item a:focus {
+  text-decoration: none;
+}
+
+.product-item a:active {
+  text-decoration: none;
+}
 /* Carousel specific styling for recommended products */
 .recommended-products-grid .product-item {
   margin-bottom: 0;
@@ -715,11 +731,53 @@ button.reset:hover:not(:has(> *)) {
 
 /*
 * --------------------------------------------------
+* Pagination buttons (Load more/Load previous)
+* --------------------------------------------------
+*/
+.Pagination a,
+.Pagination button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem 0.5rem;
+  background: var(--color-primary, #000000);
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.Pagination a:hover,
+.Pagination button:hover {
+  background: var(--color-secondary, #3774b5);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.Pagination a:active,
+.Pagination button:active {
+  background: var(--color-accent, #228b22);
+  transform: translateY(0);
+}
+
+.Pagination a:disabled,
+.Pagination button:disabled {
+  background: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/*
+* --------------------------------------------------
 * components/AddToCartButton
 * --------------------------------------------------
 */
 .AddToCartButton button {
-  background: var(--color-primary, #4a7c59);
+  background: var(--color-primary, #04f64d);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -731,12 +789,12 @@ button.reset:hover:not(:has(> *)) {
 }
 
 .AddToCartButton button:hover {
-  background: var(--color-secondary, #6b8e23);
+  background: var(--color-secondary, #1ab622);
   transform: translateY(-1px);
 }
 
 .AddToCartButton button:active {
-  background: var(--color-accent, #228b22);
+  background: var(--color-accent, #00ff00);
   transform: translateY(0);
 }
 
