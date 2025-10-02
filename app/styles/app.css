@@ -472,7 +472,16 @@ button.reset:hover:not(:has(> *)) {
 
 .product-item h4,
 .product-item small {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.product-item h4:first-of-type {
   margin-top: auto;
+}
+
+.product-item small {
+  margin-top: 0.5rem;
 }
 
 /*
