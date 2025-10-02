@@ -501,7 +501,7 @@ button.reset:hover:not(:has(> *)) {
   flex-direction: column;
   width: auto;
   flex-shrink: 0;
-  height: 320px;
+  height: 400px;
 }
 
 @media (min-width: 768px) {
@@ -525,7 +525,7 @@ button.reset:hover:not(:has(> *)) {
   height: auto;
   width: auto;
     max-width: 100%;
-    max-height: 240px;
+    max-height: 300px;
   flex-shrink: 0;
   object-fit: contain;
 }
