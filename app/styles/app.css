@@ -485,8 +485,8 @@ button.reset:hover:not(:has(> *)) {
 .product-item img {
   height: auto;
   width: auto;
-  max-width: 100%;
-  max-height: 280px;
+    max-width: 100%;
+    max-height: 280px;
   flex-shrink: 0;
   object-fit: contain;
 }
