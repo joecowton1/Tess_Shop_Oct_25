@@ -472,9 +472,9 @@ button.reset:hover:not(:has(> *)) {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  width: 280px;
+  width: auto;
   flex-shrink: 0;
-  height: auto;
+  height: 400px;
 }
 
 .product-item:hover {
@@ -484,8 +484,11 @@ button.reset:hover:not(:has(> *)) {
 
 .product-item img {
   height: auto;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 280px;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .product-item h4,
