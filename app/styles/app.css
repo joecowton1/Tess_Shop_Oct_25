@@ -264,6 +264,37 @@ button.reset:hover:not(:has(> *)) {
   min-width: fit-content;
 }
 
+/* Responsive shop name styling */
+.header a[href="/"] {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+.header a[href="/"]:hover {
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
+@media (min-width: 768px) {
+  .header a[href="/"] {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header a[href="/"] {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header a[href="/"] {
+    font-size: 2rem;
+  }
+}
+
 /*
 * --------------------------------------------------
 * components/Footer
