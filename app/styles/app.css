@@ -494,7 +494,19 @@ button.reset:hover:not(:has(> *)) {
   flex-direction: column;
   width: auto;
   flex-shrink: 0;
-  height: 300px;
+  height: 250px;
+}
+
+@media (min-width: 768px) {
+  .product-item {
+    height: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-item {
+    height: 350px;
+  }
 }
 
 .product-item:hover {
@@ -506,9 +518,21 @@ button.reset:hover:not(:has(> *)) {
   height: auto;
   width: auto;
     max-width: 100%;
-    max-height: 200px;
+    max-height: 180px;
   flex-shrink: 0;
   object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .product-item img {
+    max-height: 220px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-item img {
+    max-height: 260px;
+  }
 }
 
 .product-item h4,
