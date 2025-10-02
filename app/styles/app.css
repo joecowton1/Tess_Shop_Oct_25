@@ -187,8 +187,8 @@ button.reset:hover:not(:has(> *)) {
 */
 .header {
   align-items: center;
-  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  color: var(--color-light);
+  background: #ffffff;
+  color: var(--color-dark);
   display: flex;
   height: var(--header-height);
   padding: 0 1rem;
@@ -196,6 +196,7 @@ button.reset:hover:not(:has(> *)) {
   top: 0;
   z-index: 1;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .header-menu-mobile-toggle {
@@ -241,8 +242,9 @@ button.reset:hover:not(:has(> *)) {
 * --------------------------------------------------
 */
 .footer {
-  background: var(--color-dark);
+  background: #ffffff;
   margin-top: auto;
+  border-top: 1px solid #e0e0e0;
 }
 
 .footer-menu {
@@ -254,7 +256,7 @@ button.reset:hover:not(:has(> *)) {
 }
 
 .footer-menu a {
-  color: var(--color-light);
+  color: var(--color-dark);
   min-width: fit-content;
 }
 
