@@ -65,17 +65,18 @@ export function HeaderMenu({
             ? new URL(item.url).pathname
             : item.url;
         return (
-          <NavLink
-            className="header-menu-item"
-            end
-            key={item.id}
-            onClick={close}
-            prefetch="intent"
-            style={activeLinkStyle}
-            to={url}
-          >
-            {item.title}
-          </NavLink>
+          <div></div>
+          // <NavLink
+          //   className="header-menu-item"
+          //   end
+          //   key={item.id}
+          //   onClick={close}
+          //   prefetch="intent"
+          //   style={activeLinkStyle}
+          //   to={url}
+          // >
+          //   {item.title}
+          // </NavLink>
         );
       })}
     </nav>
